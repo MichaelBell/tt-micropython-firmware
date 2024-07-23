@@ -120,7 +120,7 @@ class ProjectMux:
         self._design_index = None
         self.enabled = None
         self.design_enabled_callback = None
-        self.shuttle_index_file = shuttle_index_file
+        self.shuttle_index_file = '/shuttles/tt05.json'
         self._chip_rom = None
     
     def reset(self):
@@ -177,6 +177,7 @@ class ProjectMux:
     
     @property 
     def chip_ROM(self) -> ChipROM:
+        return None
         if self._chip_rom is None:
             self._chip_rom = ChipROM(self)
         
@@ -187,7 +188,7 @@ class ProjectMux:
         '''
             The shuttle run, eg 'tt04'
         '''
-        return self.chip_ROM.shuttle
+        return 'tt05' #self.chip_ROM.shuttle
     
     
     @property 
